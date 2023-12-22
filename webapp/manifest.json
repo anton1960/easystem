@@ -101,6 +101,24 @@
             "config": {},
             "routes": [],
             "targets": {}
+        },
+        "extends": {
+            "extensions": {
+                "sap.ui.viewExtensions": {
+                    "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+                        "ResponsiveTableColumnsExtension|EA_System": {
+                            "type": "XML",
+                            "fragmentName": "easystem.easystem.ext.fragment.Systeme",
+                            "className": "sap.ui.core.Fragment"
+                        },
+                        "ResponsiveTableCellsExtension|EA_System": {
+                            "fragmentName": "easystem.easystem.ext.fragment.Systeme1",
+                            "className": "sap.ui.core.Fragment",
+                            "type": "XML"
+                        }
+                    }
+                }
+            }
         }
     },
     "sap.ui.generic.app": {
@@ -137,8 +155,31 @@
                                         "multiSelect": false,
                                         "selectAll": true
                                     }
+                                },
+                                "ID": {
+                                    "entitySet": "EA_System",
+                                    "key": "ID",
+                                    "annotationPath": "ID"
+                                }
+                            },
+                            "enableAutoBinding": true,
+                            "showCounts": true
+                        },
+                        "tableSettings": {
+                            "inlineDelete": true,
+                            "createWithParameterDialog": {
+                                "fields": {
+                                    "SystemDomain": {
+                                        "path": "SystemDomain"
+                                    },
+                                    "Status": {
+                                        "path": "Status"
+                                    }
                                 }
                             }
+                        },
+                        "dataLoadSettings": {
+                            "loadDataOnAppLaunch": "always"
                         }
                     }
                 },
@@ -156,6 +197,22 @@
                                 "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
                                 "component": {
                                     "name": "sap.suite.ui.generic.template.ObjectPage"
+                                }
+                            },
+                            "ObjectPage|EA_System_Interface": {
+                                "component": {
+                                    "name": "sap.suite.ui.generic.template.ObjectPage"
+                                },
+                                "entitySet": "EA_System_Interface",
+                                "navigationProperty": "systemInterface",
+                                "pages": {
+                                    "ObjectPage|EA_Images": {
+                                        "component": {
+                                            "name": "sap.suite.ui.generic.template.ObjectPage"
+                                        },
+                                        "entitySet": "EA_Images",
+                                        "navigationProperty": "images"
+                                    }
                                 }
                             }
                         }

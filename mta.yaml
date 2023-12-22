@@ -47,9 +47,51 @@ modules:
       - easystemeasystem.zip
       name: easystemeasystem
       target-path: resources/
+    - artifacts:
+      - easystemdataeasystemdata.zip
+      name: easystemdataeasystemdata
+      target-path: resources/
+    - artifacts:
+      - systemgroupsystemgroup.zip
+      name: systemgroupsystemgroup
+      target-path: resources/
+    - artifacts:
+      - easystemeasystemoverview.zip
+      name: easystemeasystemoverview
+      target-path: resources/
 - name: easystemeasystem
   type: html5
   path: .
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: easystemdataeasystemdata
+  type: html5
+  path: ea-system-data
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: systemgroupsystemgroup
+  type: html5
+  path: systemgroup
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: easystemeasystemoverview
+  type: html5
+  path: easystemoverview
   build-parameters:
     build-result: dist
     builder: custom
